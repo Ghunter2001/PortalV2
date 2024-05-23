@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import './App.css'
-import Header from './components/Header'
-import Sidebar from './components/Sidebar'
-import Home from './pages/department/Home'
+import '../../App.css'
+import Header from '../../components/Header'
+import Sidebar from '../../components/Sidebar'
+import Home from '../../pages/department/Home'
 
 function App() {
     const [openSidebarToggle, setOpenSidebarToggle] = useState(false)

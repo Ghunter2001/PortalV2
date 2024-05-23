@@ -13,6 +13,7 @@ function Home() {
             pv: 2400,
             amt: 2400,
         },
+        
         {
             name: 'Page B',
             uv: 3000,
