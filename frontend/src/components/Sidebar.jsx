@@ -9,7 +9,7 @@ import axios from "axios";
 function Sidebar({ openSidebarToggle, OpenSidebar }) {
 
     const anvigate = useNavigate()
-    axios.defaults.withCredentials = true
+
     const handleLogout = () => {
         axios.get('http://localhost:3000/auth/logout')
             .then(result => {

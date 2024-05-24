@@ -3,6 +3,8 @@ import '../../App.css'
 import Header from '../../components/Header'
 import Sidebar from '../../components/Sidebar'
 import { Outlet } from "react-router-dom";
+import axios from "axios";
+
 
 function App() {
     const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
@@ -10,6 +12,8 @@ function App() {
     const OpenSidebar = () => {
         setOpenSidebarToggle(!openSidebarToggle)
     }
+
+    axios.defaults.withCredentials = true
 
     return (
         <div className='grid-container'>
