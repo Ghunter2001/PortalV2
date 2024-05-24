@@ -4,6 +4,8 @@ import { BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill }
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line }
     from 'recharts';
 
+import { Outlet } from "react-router-dom";
+
 function Home() {
 
     const data = [
@@ -13,7 +15,7 @@ function Home() {
             pv: 2400,
             amt: 2400,
         },
-        
+
         {
             name: 'Page B',
             uv: 3000,
@@ -136,6 +138,8 @@ function Home() {
                 </ResponsiveContainer>
 
             </div>
+
+            <Outlet />
         </main>
     )
 }

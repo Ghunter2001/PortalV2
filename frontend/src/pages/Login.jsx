@@ -9,35 +9,36 @@ function Login() {
         password: ''
     });
 
+    const [error, setError] = useState({});
     const navigate = useNavigate();
-
-    const [errors, setErrors] = useState({});
 
     const handleInput = (event) => {
         setValues(prev => ({ ...prev, [event.target.name]: event.target.value }));
     };
 
+    axios.defaults.withCredentials = true;
     const handleSubmit = (event) => {
         event.preventDefault();
-        setErrors(Validation(values));
+        setError(Validation(values));
 
-        if (errors.email === "" && errors.password === "") {
-            axios.post('http://localhost:4000/login', values)
-                .then(res => {
-                    if (res.data.Login) {
-                        navigate('/home');
-                    }
-                    else {
-                        alert("No Record");
-                    }
-                })
-                .catch(err => console.log(err));
+        if (error.email === "" && error.password === "") {
+            axios.post('http://localhost:3000/auth/adminlogin', values)
+            .then(result => {
+                if (result.data.loginStatus) {
+                    localStorage.setItem("valid", true)
+                    navigate('/department')
+                } else {
+                    setError(result.data.Error)
+                }
+            })
+            .catch(err => console.log(err))
         }
     };
 
     return (
         <div className='d-flex vh-100 justify-content-center align-items-center bg-success'>
             <div className='p-3 bg-white rounded w-25'>
+
                 <h2>Login</h2>
                 <form action="" onSubmit={handleSubmit}>
 
@@ -54,7 +55,7 @@ function Login() {
                             className='form-control rounded-0'
                             onChange={handleInput}
                         />
-                        {errors.email && <span className='text-danger'>{errors.email}</span>}
+                        {error.email && <span className='text-danger'>{error.email}</span>}
                     </div>
 
                     <div className='mb-3'>
@@ -70,9 +71,9 @@ function Login() {
                             className='form-control rounded-0'
                             onChange={handleInput}
                         />
-                        {errors.password && <span className='text-danger'>{errors.password}</span>}
+                        {error.password && <span className='text-danger'>{error.password}</span>}
                     </div>
-                    <button type='submit' className='btn btn-success w-100'>Login</button>
+                    <button className='btn btn-success w-100'>Login</button>
                     <p>Not Have Account Yet?</p>
                     <Link to="/signup" className='btn btn-default border w-100 bg-light rounded-0 text-decoration-none'>Click Here</Link>
                 </form>

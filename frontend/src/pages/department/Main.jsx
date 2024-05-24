@@ -2,7 +2,7 @@ import { useState } from 'react'
 import '../../App.css'
 import Header from '../../components/Header'
 import Sidebar from '../../components/Sidebar'
-import Home from '../../pages/department/Home'
+import { Outlet } from "react-router-dom";
 
 function App() {
     const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
@@ -15,7 +15,7 @@ function App() {
         <div className='grid-container'>
             <Header OpenSidebar={OpenSidebar} />
             <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />
-            <Home />
+            <Outlet />
         </div>
     )
 }

@@ -4,11 +4,14 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Main from './pages/department/Main';
+import DeptMain from './pages/department/Main';
+import DeptDash from './pages/department/Home';
+import DeptIT from "./pages/department/DeptIT";
 import Admission from './pages/admission/Main';
 import Information from './pages/admission/Information';
 import Personal from './pages/admission/Personal';
 import Family from './pages/admission/Family';
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -16,7 +19,17 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path='/main' element={<Main />}></Route>
+
+
+        <Route path='/department' element={
+          <PrivateRoute >
+            <DeptMain />
+          </PrivateRoute>
+        }>
+          <Route path='' element={<DeptDash />}></Route>
+          <Route path='/department/deptIT' element={<DeptIT />}></Route>
+        </Route>
+
         <Route path='/admission' element={<Admission />}></Route>
         <Route path='/information' element={<Information />}></Route>
         <Route path='/personal' element={<Personal />}></Route>
