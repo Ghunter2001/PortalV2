@@ -32,7 +32,7 @@ function Signup() {
     };
 
     return (
-        <div className='d-flex vh-100 justify-content-center align-items-center bg-primary'>
+        <div className='d-flex vh-100 justify-content-center align-items-center bg-success'>
             <div className='p-3 bg-white rounded w-25'>
                 <h2>Sign Up</h2>
                 <form onSubmit={handleSubmit}>
@@ -75,8 +75,8 @@ function Signup() {
 
                     <button type='submit' className='btn btn-success w-100'>Login</button>
                     <p>Not Have Account Yet?</p>
-                    <Link to="/" className='btn btn-default border w-100 bg-light rounded-0 text-decoration-none'>Back to Login</Link>
-                
+                    <Link to="/login" className='btn btn-default border w-100 bg-light rounded-0 text-decoration-none'>Back to Login</Link>
+                    <Link to='/' className='mt-3 text-decoration-none d-flex justify-content-sm-center'>Back to Main Page</Link>
                 </form>
             </div>
         </div>

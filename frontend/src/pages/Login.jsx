@@ -77,6 +77,7 @@ function Login() {
                     <button className='btn btn-success w-100'>Login</button>
                     <p>Not Have Account Yet?</p>
                     <Link to="/signup" className='btn btn-default border w-100 bg-light rounded-0 text-decoration-none'>Click Here</Link>
+                    <Link to='/' className='mt-3 text-decoration-none d-flex justify-content-sm-center'>Back to Main Page</Link>
                 </form>
             </div>
         </div>
