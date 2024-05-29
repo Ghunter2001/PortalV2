@@ -4,7 +4,7 @@ import React from 'react'
 
 function Information() {
     return (
-        <div className='p-5 d-flex justify-content-center align-items-center'>
+        <div className='container'>
 
             <form action="" className='row w-100'>
                 <div>

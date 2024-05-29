@@ -6,8 +6,8 @@ function Main() {
     return (
         <div className='container-fluid bg-white'>
             <div className='row'>
-                <Nav />
-                <div className='d-flex flex-grow-1 justify-content-center align-items-center p-5'>
+                <Nav/>
+                <div className='d-flex min-vh-100 justify-content-center pt-5'>
                     <Outlet />
                 </div>
             </div>
