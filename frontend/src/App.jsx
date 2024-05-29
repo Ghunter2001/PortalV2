@@ -11,10 +11,12 @@ import DeptMain from './pages/department/Main';
 import DeptDash from './pages/department/Home';
 import DeptIT from "./pages/department/DeptIT";
 
-import Admission from './pages/admission/Main';
-import Information from './pages/admission/Information';
-import Personal from './pages/admission/Personal';
-import Family from './pages/admission/Family';
+import AdmMain from './pages/admission/Main';
+import AdmHome from './pages/admission/home';
+import AdmInfo from './pages/admission/Information';
+import AdmPersonal from './pages/admission/Personal';
+import AdmFamily from './pages/admission/Family';
+
 import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
@@ -35,10 +37,13 @@ function App() {
           <Route path='/department/deptIT' element={<DeptIT />}></Route>
         </Route>
 
-        <Route path='/admission' element={<Admission />}></Route>
-        <Route path='/information' element={<Information />}></Route>
-        <Route path='/personal' element={<Personal />}></Route>
-        <Route path='/family' element={<Family />}></Route>
+        <Route path='/admission' element={<AdmMain />}>
+          <Route path='' element={<AdmHome />} />
+          <Route path='/admission/information' element={<AdmInfo />} />
+          <Route path='/admission/personal' element={<AdmPersonal />} />
+          <Route path='/admission/family' element={<AdmFamily />} />
+        </Route>
+
       </Routes>
     </BrowserRouter>
   );

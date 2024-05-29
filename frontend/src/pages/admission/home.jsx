@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './home.css'
 
 function Home() {
 
     return (
-        <div className="flex vh-100 justify-center items-center pt-4">
+        <div className="flex justify-center items-center pt-4">
             <div className="bg-white rounded-lg shadow-md p-8 max-w-4xl w-full">
                 <h3 className="text-lg font-semibold">Application Form for Admission</h3>
-                <h4 className="text-md">1st sem 2024-2025</h4>
+                {/* <h4 className="text-md">1st sem 2024-2025</h4> */}
                 <p className="mt-4">Please fill out the required fields in the application. Download and print the profile after completion. You need to submit this with your requirements to the Office of Student Affairs and Services.</p>
                 <hr className="my-4" />
 
@@ -38,25 +39,18 @@ function Home() {
                     <div className="row d-flex justify-content-center">
                         <div className="col-8 col-md-4">
                             <h5 className="font-semibold mt-4">Admission Information</h5>
-                            <a href="/information" className="block mt-2">
+                            <Link to="/admission/information" className="block mt-2">
                                 <img src="../img/complete.png" className="inline-block w-4 h-4 mr-2" alt="Complete" />Complete
-                            </a>
+                            </Link>
                             <h5 className="font-semibold mt-4">Personal Information</h5>
-                            <a href="/personal" className="block mt-2">
+                            <Link to="/admission/personal" className="block mt-2">
                                 <img src="../img/incomplete.png" className="inline-block w-4 h-4 mr-2" alt="Incomplete" />Incomplete
-                            </a>
+                            </Link>
                             <h5 className="font-semibold mt-4">Family Background</h5>
-                            <a href="family.php" className="block mt-2">
+                            <Link to="/admission/family" className="block mt-2">
                                 <img src="../img/incomplete.png" className="inline-block w-4 h-4 mr-2" alt="Incomplete" />Incomplete
-                            </a>
-                            <h5 className="font-semibold mt-4">Educational Background</h5>
-                            <a href="educational.php" className="block mt-2">
-                                <img src="../img/incomplete.png" className="inline-block w-4 h-4 mr-2" alt="Incomplete" />Incomplete
-                            </a>
-                            <h5 className="font-semibold mt-4">Medical History Information</h5>
-                            <a href="medical.php" className="block mt-2">
-                                <img src="../img/incomplete.png" className="inline-block w-4 h-4 mr-2" alt="Incomplete" />Incomplete
-                            </a>
+                            </Link>
+                            
                         </div>
 
                         <div className="col-8 col-md-4 bg-body-secondary d-flex flex-column align-items-center p-4">
