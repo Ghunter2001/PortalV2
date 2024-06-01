@@ -1,7 +1,13 @@
+:root {
+    --primary: #1f3224;
+    --secondary: #bc9404;
+    --light: #f5f2f2;
+    --dark: #0c0c0c;
+}
+
 body {
     margin: 0;
     padding: 0;
-    background-color: #2d7931;
     font-family: 'Montserrat', sans-serif;
     max-height: max-content;
 }
@@ -64,10 +70,10 @@ body {
 #sidebar {
     grid-area: sidebar;
     height: 100%;
-    background-color: #263043;
+    background-color: var(--primary);
     overflow-y: auto;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
+    transition: all 0.8s, left 0.8s ease;
+    -webkit-transition: all 0.8s;
 }
 
 .sidebar-title {
@@ -86,6 +92,7 @@ body {
     margin-top: 15px;
     font-size: 20px;
     font-weight: 700;
+    color: var(--secondary);
 }
 
 .sidebar-list {
@@ -106,6 +113,12 @@ body {
 .sidebar-list-item>a {
     text-decoration: none;
     color: #9e9ea4;
+}
+
+.sidebar-list-item>a:hover {
+    text-decoration: none;
+    color: var(--secondary);
+
 }
 
 .sidebar-responsive {
@@ -148,6 +161,9 @@ body {
     justify-content: space-around;
     padding: 8px 15px;
     border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .card:first-child {
@@ -233,6 +249,3 @@ body {
         display: none;
     }
 }
-
-
-

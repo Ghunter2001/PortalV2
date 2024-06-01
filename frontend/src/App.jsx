@@ -29,9 +29,9 @@ function App() {
 
 
         <Route path='/department' element={
-          <PrivateRoute >
+          // <PrivateRoute >
             <DeptMain />
-          </PrivateRoute>
+          // </PrivateRoute>
         }>
           <Route path='' element={<DeptDash />}></Route>
           <Route path='/department/deptIT' element={<DeptIT />}></Route>

@@ -11,11 +11,11 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', "DELETE"],
     credentials: true
 }))
-app.use(express.json())
+
 app.use(cookieParser())
 app.use(express.static('Public'))
 
-
+app.use(express.json())
 app.use('/auth', adminRouter)
 app.use('/employee', EmployeeRouter)
 

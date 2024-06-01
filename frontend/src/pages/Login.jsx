@@ -15,7 +15,7 @@ function Login() {
     const handleInput = (event) => {
         setValues(prev => ({ ...prev, [event.target.name]: event.target.value }));
     };
-    
+
 
     axios.defaults.withCredentials = true;
     const handleSubmit = (event) => {
@@ -24,15 +24,15 @@ function Login() {
 
         if (error.email === "" && error.password === "") {
             axios.post('http://localhost:3000/auth/adminlogin', values)
-            .then(result => {
-                if (result.data.loginStatus) {
-                    localStorage.setItem("valid", true)
-                    navigate('/department')
-                } else {
-                    setError(result.data.Error)
-                }
-            })
-            .catch(err => console.log(err))
+                .then(result => {
+                    if (result.data.loginStatus) {
+                        localStorage.setItem("valid", true)
+                        navigate('/department')
+                    } else {
+                        setError(result.data.Error)
+                    }
+                })
+                .catch(err => console.log(err))
         }
     };
 
@@ -44,12 +44,13 @@ function Login() {
                 <form action="" onSubmit={handleSubmit}>
 
                     <div className='mb-3'>
-                        <label htmlFor="username">
+                        <label htmlFor="email">
                             <strong>
                                 Username:
                             </strong>
                         </label>
                         <input
+                            id="email"
                             name='email'
                             type="email"
                             placeholder="Enter Username"
@@ -66,6 +67,7 @@ function Login() {
                             </strong>
                         </label>
                         <input
+                            id='password'
                             name='password'
                             type="password"
                             placeholder="Enter Password"

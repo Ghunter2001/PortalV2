@@ -1,29 +1,83 @@
-import React from 'react';
+import React from 'react'
+import { Link, useNavigate } from "react-router-dom";
+import {
+    BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill,
+    BsListCheck, BsMenuButtonWideFill, BsFillGearFill
+} from 'react-icons/bs'
+import axios from "axios";
 
-function Nav() {
+function Sidebar({ openSidebarToggle, OpenSidebar }) {
+
+    const anvigate = useNavigate()
+
+    const handleLogout = () => {
+        axios.get('http://localhost:3000/auth/logout')
+            .then(result => {
+                if (result.data.Status) {
+                    localStorage.removeItem("valid")
+                    anvigate('/')
+                }
+            })
+    }
+
+
+
     return (
-        <nav className="flex items-center justify-between bg-transparent p-4">
-            <i className="bi bi-justify-left text-2xl"></i>
-            <button className="lg:hidden p-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-                <i className="bi bi-list text-2xl"></i>
-            </button>
-
-            <div className="collapse navbar-collapse lg:flex lg:items-center" id="collapsibleNavId">
-                <ul className="flex flex-col lg:flex-row lg:ml-auto mb-0 space-y-2 lg:space-y-0 lg:space-x-4">
-                    <li className="relative group">
-                        <a className="cursor-pointer text-lg" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            CVSUPortal
-                        </a>
-                        <ul className="absolute hidden group-hover:block bg-white shadow-lg mt-2 rounded">
-                            <li><a className="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="/Main">Profile</a></li>
-                            <li><a className="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="/Main">Setting</a></li>
-                            <li><a className="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="/Main">Logout</a></li>
-                        </ul>
-                    </li>
-                </ul>
+        <aside id="sidebar" className={openSidebarToggle ? "sidebar-responsive" : ""}>
+            <div className='sidebar-title'>
+                <div className='sidebar-brand d-flex align-items-center gap-1'>
+                    <img src='/assets/CvsuLogo.png' style={{ width: '2.4rem', aspectRatio: '1/1' }} />
+                    <p className='icon_header' /> Department
+                </div>
+                <span className='icon close_icon' onClick={OpenSidebar}>X</span>
             </div>
-        </nav>
-    );
+
+            <ul className='sidebar-list'>
+                <li className='sidebar-list-item'>
+                    <Link to='/department'>
+                        <BsGrid1X2Fill className='icon' /> Dashboard
+                    </Link>
+                </li>
+                <li className='sidebar-list-item'>
+                    <Link to='/department/deptIT'>
+                        <BsFillGrid3X3GapFill className='icon' /> Applicant Overview
+                    </Link>
+                </li>
+                <li className='sidebar-list-item'>
+                    <a href="">
+                        <BsFillArchiveFill className='icon' /> Detailed Application Review
+                    </a>
+                </li>
+                <li className='sidebar-list-item'>
+                    <a href="">
+                        <BsPeopleFill className='icon' /> Assessment Scheduling
+                    </a>
+                </li>
+                <li className='sidebar-list-item'>
+                    <a href="">
+                        <BsListCheck className='icon' /> Assessment Results
+                    </a>
+                </li>
+                <li className='sidebar-list-item'>
+                    <a href="">
+                        <BsMenuButtonWideFill className='icon' /> Reports and Analytics
+                    </a>
+                </li>
+                <li className='sidebar-list-item'>
+                    <a href="">
+                        <BsFillGearFill className='icon' /> Setting
+                    </a>
+                </li>
+
+                <li className="w-100" onClick={handleLogout}>
+                    <Link className="nav-link px-0 align-middle text-white">
+                        <i className="fs-4 bi-power ms-2"></i>
+                        <span className="ms-2 d-none d-sm-inline">Logout</span>
+                    </Link>
+                </li>
+            </ul>
+        </aside>
+    )
 }
 
-export default Nav;
+export default Sidebar
