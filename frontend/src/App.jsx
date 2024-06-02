@@ -5,7 +5,10 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Landing from "./pages/Landing";
+
+// import Landing from "./pages/Landing";
+import Landing from "./pages/landing/landingMain";
+
 
 import DeptMain from './pages/department/Main';
 import DeptDash from './pages/department/Home';
