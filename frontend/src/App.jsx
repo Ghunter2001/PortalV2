@@ -4,7 +4,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Login from './pages/Login';
-import Signup from './pages/Signup';
+import Signup from './pages/SignupV2';
 
 // import Landing from "./pages/Landing";
 import Landing from "./pages/landing/landingMain";
