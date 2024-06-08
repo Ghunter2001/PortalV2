@@ -33,12 +33,14 @@ function Signup() {
 
     return (
         <div className='d-flex vh-100 justify-content-center align-items-center bg-success'>
-            <div className='p-3 bg-white rounded w-25'>
+            <div className='p-3 bg-white rounded w-100 mx-2' style={{ maxWidth: '400px' }}>
                 <h2>Sign Up</h2>
                 <form onSubmit={handleSubmit}>
 
                     <div className='mb-3'>
-                        <label htmlFor="name"><strong>Name:</strong></label>
+                        <label htmlFor="name" className="form-label">
+                            <strong>Name:</strong>
+                        </label>
                         <input
                             name='name'
                             type="text"
@@ -50,7 +52,9 @@ function Signup() {
                     </div>
 
                     <div className='mb-3'>
-                        <label htmlFor="email"><strong>Email:</strong></label>
+                        <label htmlFor="email" className="form-label">
+                            <strong>Email:</strong>
+                        </label>
                         <input
                             name='email'
                             type="email"
@@ -62,7 +66,9 @@ function Signup() {
                     </div>
 
                     <div className='mb-3'>
-                        <label htmlFor="password"><strong>Password:</strong></label>
+                        <label htmlFor="password" className="form-label">
+                            <strong>Password:</strong>
+                        </label>
                         <input
                             name='password'
                             type="password"
@@ -73,10 +79,9 @@ function Signup() {
                         {errors.password && <span className='text-danger'>{errors.password}</span>}
                     </div>
 
-                    <button type='submit' className='btn btn-success w-100'>Login</button>
-                    <p>Not Have Account Yet?</p>
-                    <Link to="/login" className='btn btn-default border w-100 bg-light rounded-0 text-decoration-none'>Back to Login</Link>
-                    <Link to='/' className='mt-3 text-decoration-none d-flex justify-content-sm-center'>Back to Main Page</Link>
+                    <button type='submit' className='btn btn-success w-100'>Sign Up</button>
+                    <p className="mt-3 d-flex gap-1">Already have an account?<Link to="/login" ><p>Click here</p></Link></p>
+                    <Link to='/' className='mt-3 text-decoration-none d-flex justify-content-center'>Back to Main Page</Link>
                 </form>
             </div>
         </div>

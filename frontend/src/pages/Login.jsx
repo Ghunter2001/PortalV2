@@ -16,7 +16,6 @@ function Login() {
         setValues(prev => ({ ...prev, [event.target.name]: event.target.value }));
     };
 
-
     axios.defaults.withCredentials = true;
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -38,16 +37,12 @@ function Login() {
 
     return (
         <div className='d-flex vh-100 justify-content-center align-items-center bg-success'>
-            <div className='p-3 bg-white rounded w-25'>
-
+            <div className='p-3 bg-white rounded w-100 mx-2' style={{ maxWidth: '400px' }}>
                 <h2>Login</h2>
-                <form action="" onSubmit={handleSubmit}>
-
+                <form onSubmit={handleSubmit}>
                     <div className='mb-3'>
-                        <label htmlFor="email">
-                            <strong>
-                                Username:
-                            </strong>
+                        <label htmlFor="email" className="form-label">
+                            <strong>Username:</strong>
                         </label>
                         <input
                             id="email"
@@ -61,10 +56,8 @@ function Login() {
                     </div>
 
                     <div className='mb-3'>
-                        <label htmlFor="password">
-                            <strong>
-                                Password:
-                            </strong>
+                        <label htmlFor="password" className="form-label">
+                            <strong>Password:</strong>
                         </label>
                         <input
                             id='password'
@@ -77,13 +70,12 @@ function Login() {
                         {error.password && <span className='text-danger'>{error.password}</span>}
                     </div>
                     <button className='btn btn-success w-100'>Login</button>
-                    <p>Not Have Account Yet?</p>
-                    <Link to="/signup" className='btn btn-default border w-100 bg-light rounded-0 text-decoration-none'>Click Here</Link>
-                    <Link to='/' className='mt-3 text-decoration-none d-flex justify-content-sm-center'>Back to Main Page</Link>
+                    <p className="mt-3 d-flex gap-1">Already have an account?<Link to="/signup" ><p>Click here</p></Link></p>
+                    <Link to='/' className='mt-3 text-decoration-none d-flex justify-content-center'>Back to Main Page</Link>
                 </form>
             </div>
         </div>
-    )
+    );
 }
 
 export default Login;
