@@ -8,6 +8,7 @@ import Signup from './pages/SignupV2';
 
 // import Landing from "./pages/Landing";
 import Landing from "./pages/landing/landingMain";
+import About from "./pages/landing/about";
 
 
 import DeptMain from './pages/department/Main';
@@ -27,6 +28,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/aboutmain" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
