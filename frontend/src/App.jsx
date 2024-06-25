@@ -6,10 +6,10 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from './pages/Login';
 import Signup from './pages/SignupV2';
 
-// import Landing from "./pages/Landing";
 import Landing from "./pages/landing/landingMain";
+import Home from "./pages/landing/landingHome";
 import About from "./pages/landing/about";
-
+import CvsuHymn from "./pages/landing/cvsuhymn";
 
 import DeptMain from './pages/department/Main';
 import DeptDash from './pages/department/Home';
@@ -23,19 +23,24 @@ import AdmFamily from './pages/admission/Family';
 
 import PrivateRoute from "./components/PrivateRoute";
 
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/aboutmain" element={<About />} />
+        <Route path="/" element={<Landing />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="hymn" element={<CvsuHymn />} />
+        </Route>
+
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
 
         <Route path='/department' element={
           // <PrivateRoute >
-            <DeptMain />
+          <DeptMain />
           // </PrivateRoute>
         }>
           <Route path='' element={<DeptDash />}></Route>

@@ -16,10 +16,10 @@ const Header = () => {
                         <Link to='/' className='nav-link text-white'>Home</Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Link to='/aboutmain' className='nav-link text-white'>About</Link>
+                        <Link to='/about' className='nav-link text-white'>About</Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Link to='/cvsuhym' className='nav-link text-white'>CVSU hymn</Link>
+                        <Link to='/hymn' className='nav-link text-white'>CVSU hymn</Link>
                     </Nav.Item>
                     <Nav.Item>
                         <Link to='/admission' className='nav-link text-white'>Admission</Link>

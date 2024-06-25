@@ -17,10 +17,12 @@ const Home = () => {
                 <Container>
                     <h1>CvSU Bacoor City Campus</h1>
                     <p>In support to the Vision and Mission of the University, CvSU Bacoor City Campus shall</p>
-                    <Row className="justify-content-center">
+                    <Row className="justify-content-center gap-4">
                         <Col md={5} className="fea-box mb-4 p-4 bg-light text-start shadow-sm">
-                            <img src="/assets/school.svg" alt="Goals" className="mb-3" style={{ width: "50px" }} />
-                            <h3 className="h5">Goals of the CvSU Bacoor City Campus</h3>
+                            <div className=' d-flex align-items-center gap-3'>
+                                <img src="/assets/school.svg" alt="Goals" className="mb-3" style={{ width: "50px" }} />
+                                <h3 className="h5"><strong>Goals</strong></h3>
+                            </div>
                             <ul className="list-unstyled">
                                 <li>1. Provide quality and affordable education which promotes intellectual growth, academic excellence and moral integrity.</li>
                                 <li>2. Prepare students to meet the demands of the global market and respond to the society’s needs.</li>
@@ -29,8 +31,10 @@ const Home = () => {
                             </ul>
                         </Col>
                         <Col md={5} className="fea-box mb-4 p-4 bg-light text-start shadow-sm">
-                            <img src="/assets/user.svg" alt="Courses" className="mb-3" style={{ width: "50px" }} />
-                            <h3 className="h5">Courses Offered</h3>
+                            <div className=' d-flex align-items-center gap-3'>
+                                <img src="/assets/user.svg" alt="Courses" className="mb-3" style={{ width: "50px" }} />
+                                <h3 className="h5"><strong>Courses Offered</strong></h3>
+                            </div>
                             <ul className="list-unstyled">
                                 <li>Bachelor of Secondary Education</li>
                                 <li>BS Business Management</li>
