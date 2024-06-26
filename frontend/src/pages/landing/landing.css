@@ -44,18 +44,16 @@ h6 {
 
 /* Navigation */
 
-.header {
+.LandingHeader {
     background: linear-gradient(to right, #043f19, #59bf6d);
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
-    border-bottom-left-radius: 125px;
-    border-bottom-right-radius: 125px;
     height: 80px;
     padding-left: 80px;
     padding-right: 80px;
 }
 
 .header-left img {
-    width: 60px; /* Adjust size as necessary */
+    width: 60px;
 }
 
 .header-right .nav-link {

@@ -15,7 +15,7 @@ function PersonalInfo() {
                 document.getElementById('zipcode').value = '';
             }
         };
-        xhr.open('POST', '../includes/addressfilter.php');
+        xhr.open('POST', '../includes/addressfilter.jsx');
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.send('region=' + region);
     }
@@ -30,7 +30,7 @@ function PersonalInfo() {
                 document.getElementById('zipcode').value = '';
             }
         };
-        xhr.open('POST', '../includes/addressfilter.php');
+        xhr.open('POST', '../includes/addressfilter.jsx');
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.send('province=' + province);
     }
@@ -44,7 +44,7 @@ function PersonalInfo() {
                 document.getElementById('zipcode').value = this.responseText.trim();
             }
         };
-        xhr.open('POST', '../includes/addressfilter.php');
+        xhr.open('POST', '../includes/addressfilter.jsx');
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.send('town=' + town + '&prov=' + prov);
     }

@@ -5,7 +5,7 @@ import '../../pages/landing/landing.css';
 
 const Header = () => {
     return (
-        <Navbar fixed="top" expand="lg" className=" header">
+        <Navbar fixed="top" expand="lg" className="LandingHeader">
             <Navbar.Brand href="/" className='header-left'>
                 <img src="/assets/CvsuLogo.png" alt="CvSU Logo" />
             </Navbar.Brand>
