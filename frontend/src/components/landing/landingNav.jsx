@@ -19,7 +19,7 @@ const Header = () => {
                         <Link to='/about' className='nav-link text-white'>About</Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Link to='/hymn' className='nav-link text-white'>CVSU hymn</Link>
+                        <Link to='/hymn ' className='nav-link text-white'>CVSU hymn</Link>
                     </Nav.Item>
                     <Nav.Item>
                         <Link to='/admission' className='nav-link text-white'>Admission</Link>

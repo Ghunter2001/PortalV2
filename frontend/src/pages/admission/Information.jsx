@@ -82,7 +82,11 @@ function Information() {
                     </div>
                 </div>
 
-                <button type='submit' className='btn btn-success'>Next</button>
+                <div className="col-lg-3">
+                        <button className="btn btn-success" type="submit">
+                            Mark as Complete
+                        </button>
+                    </div>
 
             </form>
         </div>

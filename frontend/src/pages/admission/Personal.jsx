@@ -53,12 +53,12 @@ function PersonalInfo() {
     return (
         <div className="container">
             <form className="needs-validation" noValidate method="post">
-                *-required fields
+                Required fields
                 <h3>Personal Information</h3>
 
                 <div className="row">
                     <div className="col-md-4">
-                        *First Name<br />
+                        First Name<br />
                         <input type="text" className="form-control" name="firstname" required />
                         <div className="invalid-feedback">
                             First name is required
@@ -69,7 +69,7 @@ function PersonalInfo() {
                         <input type="text" className="form-control" name="middlename" />
                     </div>
                     <div className="col-md-3">
-                        *Last Name<br />
+                        Last Name<br />
                         <input type="text" className="form-control" name="lastname" required />
                         <div className="invalid-feedback">
                             Last name is required
@@ -92,7 +92,7 @@ function PersonalInfo() {
                 <br />
                 <div className="row">
                     <div className="col-md-2">
-                        *Region<br />
+                        Region<br />
                         <select name="region" className="custom-select form-control" onChange={(e) => loadprovince(e.target.value)}>
                             <option value="ncr">NCR (Metro Manila)</option>
                             <option value="1">REGION 1 - ILOCOS REGION</option>
@@ -115,36 +115,36 @@ function PersonalInfo() {
                         </select>
                     </div>
                     <div className="col-md-2">
-                        *Province<br />
+                        Province<br />
                         <select disabled className="custom-select form-control" name="province" id="province" onChange={(e) => loadtown(e.target.value)}></select>
                     </div>
                     <div className="col-md-2">
-                        *Town<br />
+                        Town<br />
                         <select disabled className="custom-select form-control" name="town" id="town" onChange={(e) => loadzip(e.target.value)}></select>
                     </div>
                     <div className="col-md-2">
-                        *Barangay<br />
+                        Barangay<br />
                         <input type="text" className="form-control form-control" name="barangay" required />
                         <div className="invalid-feedback">
                             Barangay name is required
                         </div>
                     </div>
                     <div className="col-md-2">
-                        *Street<br />
+                        Street<br />
                         <input type="text" className="form-control" name="street" required />
                         <div className="invalid-feedback">
                             Street name is required
                         </div>
                     </div>
                     <div className="col-md-2">
-                        *Zip Code<br />
+                        Zip Code<br />
                         <input type="text" disabled readOnly maxLength="0" size="3" className="form-control" name="zipcode" id="zipcode" required />
                     </div>
                 </div>
                 <br />
                 <div className="row">
                     <div className="col-md-4">
-                        *Cellphone Number (11-digit format)<br />
+                        Cellphone Number (11-digit format)<br />
                         <input type="tel" className="form-control" name="cellphone" required pattern="[0]{1}[9]{1}[0-9]{9}" placeholder="09123456789" maxLength="11" />
                         <div className="invalid-feedback">
                             Must be a valid cellphone number
@@ -152,7 +152,7 @@ function PersonalInfo() {
                     </div>
                     <div className="col-md-4">
                         Landline Number<br />
-                        <input type="tel" className="form-control" pattern="\d*" name="landline" maxLength="11" minLength="7" />
+                        <input type="tel" className="form-control" pattern="\d" name="landline" maxLength="11" minLength="7" />
                         <div className="invalid-feedback">
                             Must be a valid landline number
                         </div>
@@ -182,14 +182,14 @@ function PersonalInfo() {
                 <br />
                 <div className="row">
                     <div className="col-md-3">
-                        *Date of Birth<br />
+                        Date of Birth<br />
                         <input type="date" className="form-control" id="bdaypicker" name="birthday" max="2012-12-31" min="1942-01-01" required />
                         <div className="invalid-feedback">
                             Must be a valid date of birth
                         </div>
                     </div>
                     <div className="col-md-3">
-                        *Place of Birth<br />
+                        Place of Birth<br />
                         <input type="text" className="form-control" id="birthplace" name="birthplace" required />
                         <div className="invalid-feedback">
                             Place of birth is required
@@ -200,7 +200,7 @@ function PersonalInfo() {
                         <input type="text" className="form-control" name="religion" />
                     </div>
                     <div className="col-md-3">
-                        *Are you from an indigenous tribe?<br />
+                        Are you from an indigenous tribe?<br />
                         <select className="form-control" name="indigenous">
                             <option>No</option>
                             <option>Yes</option>

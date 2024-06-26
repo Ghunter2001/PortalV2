@@ -25,7 +25,7 @@ function Family() {
     return (
         <div className="container">
             <form className="needs-validation" noValidate action="" method="post">
-                * - required fields
+                Required fields
                 <h5>Family Background</h5>
                 <div className="row">
                     <div className="col-md-4">
@@ -73,8 +73,8 @@ function Family() {
                 <hr />
                 <div className="row">
                     <div className="col-md-4">
-                        *Estimated Monthly Family Income <br />
-                        <select name="income" className="custom-select" required>
+                        Estimated Monthly Family Income <br />
+                        <select name="income" className="form-control custom-select" required>
                             <option></option>
                             <option>below 10,000</option>
                             <option>11,000-20,000</option>
@@ -87,7 +87,7 @@ function Family() {
                     </div>
                     <div className="col-md-4">
                         Number of siblings<br />
-                        <select name="siblings" className="custom-select">
+                        <select name="siblings" className="form-control custom-select">
                             <option>0</option>
                             <option>1</option>
                             <option>2</option>
@@ -113,7 +113,7 @@ function Family() {
                     </div>
                     <div className="col-md-4">
                         Birth Order<br />
-                        <select name="birthorder" className="custom-select">
+                        <select name="birthorder" className="form-control custom-select">
                             <option>Eldest</option>
                             <option>Second</option>
                             <option>Middle</option>
@@ -125,7 +125,7 @@ function Family() {
                 <hr />
                 <div className="row">
                     <div className="col-md-4">
-                        *Guardian's Name<br />
+                        Guardian's Name<br />
                         <input type="text" className="form-control" name="guardianname" required />
                         <span className="help-block" style={{ fontSize: '12px' }}>
                             Either the father or mother or any individual that acts as the guardian.
@@ -133,7 +133,7 @@ function Family() {
                         <div className="invalid-feedback">Guardian's name is required</div>
                     </div>
                     <div className="col-md-4">
-                        *Contact Number<br />
+                        Contact Number<br />
                         <input
                             type="tel"
                             className="form-control"
@@ -146,7 +146,7 @@ function Family() {
                         <div className="invalid-feedback">Guardian's contact number is required</div>
                     </div>
                     <div className="col-md-4">
-                        *Occupation<br />
+                        Occupation<br />
                         <input type="text" className="form-control" name="guardianoccupation" required />
                         <div className="invalid-feedback">Guardian occupation field is required</div>
                     </div>

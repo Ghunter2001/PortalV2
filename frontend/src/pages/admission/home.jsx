@@ -40,8 +40,8 @@ function Home() {
                     <div className="row justify-content-center mt-2">
                         <div className="col-8 col-md-4">
                             <h5 className="font-weight-semibold mt-4">Admission Information</h5>
-                            <Link to="/admission/information" className="d-block mt-2 d-flex gap-2 text-success">
-                                <FaRegCircleCheck className="inline-block mr-2 text" style={{ width: '1.5rem', height: '1.5rem' }} alt="Complete" />
+                            <Link to="/admission/information" className="d-block mt-2 d-flex gap-2 text-danger">
+                                <FaRegCircleXmark className="inline-block mr-2 text" style={{ width: '1.5rem', height: '1.5rem' }} alt="Incomplete" />
                                 Complete
                             </Link>
                             <h5 className="font-weight-semibold mt-4">Personal Information</h5>
